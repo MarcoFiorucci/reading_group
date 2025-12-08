@@ -1,27 +1,181 @@
-/* ... (Stili precedenti qui) ... */
+/* Importazione di un font moderno (es. Poppins da Google Fonts)
+ * Puoi includerlo nell' <head> di index.html e programma.html:
+ * <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+ */
+ 
+/* Variabili per gestione colori */
+:root {
+    --color-primary: #1e3a8a; /* Blu Scuro Intenso (Tech/Ricerca) */
+    --color-secondary: #3b82f6; /* Blu Brillante (Highlight) */
+    --color-background: #f8fafc; /* Sfondo molto chiaro */
+    --color-text: #1f2937; /* Testo scuro per leggibilità */
+    --color-light-gray: #e5e7eb; /* Grigio chiaro per bordi */
+}
 
-/* Stili per le tabelle nel programma.html */
+/* Stile base */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Header e Navigazione --- */
+
+header {
+    background: var(--color-primary);
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600; /* Più audace */
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+    border-bottom: 3px solid var(--color-secondary);
+}
+
+/* --- Layout Principale --- */
+
+main {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px; /* Angoli arrotondati */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--color-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-light-gray);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* --- Sezione Incontro (Card) --- */
+
+.next-meeting {
+    margin-bottom: 40px;
+}
+
+.card {
+    border: 1px solid var(--color-light-gray);
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.link-meeting a {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.link-meeting a:hover {
+    background-color: #1d4ed8; /* Blu leggermente più scuro */
+}
+
+/* --- Liste e Obiettivi --- */
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%233b82f6'%3E%3Cpath fill-rule='evenodd' d='M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.052-.143z' clip-rule='evenodd' /%3E%3C/svg%3E") no-repeat left center;
+    background-size: 1.2em;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+/* --- Tabelle (Programma e Archivio) --- */
+
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* Cambiato per angoli arrotondati */
+    border-spacing: 0;
     margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Assicura che gli angoli siano visibili */
 }
 
 table thead {
-    background-color: #004d99;
+    background-color: var(--color-primary);
     color: white;
 }
 
 table th, table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    padding: 15px;
     text-align: left;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+table th:first-child, table td:first-child {
+    padding-left: 25px;
+}
+table th:last-child, table td:last-child {
+    padding-right: 25px;
 }
 
 table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f8fafc;
 }
 
 table tbody tr:hover {
-    background-color: #e6f0ff;
+    background-color: var(--color-light-gray);
+    cursor: pointer;
+}
+
+/* --- Footer --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-light-gray);
+    color: #6b7280;
+    font-size: 0.9rem;
 }
