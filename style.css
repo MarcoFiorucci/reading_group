@@ -1,13 +1,174 @@
-/* --- Tabelle (Programma e Archivio) - Correzione Allineamento --- */
+/* --- 1. Variabili e Reset --- */
+:root {
+    --color-primary: #1e3a8a;       /* Blu Intenso (Ricerca) */
+    --color-secondary: #059669;     /* Verde Smeraldo (Focus/Successo) */
+    --color-background: #f8fafc;    /* Sfondo Molto Chiaro */
+    --color-text: #1f2937;          /* Testo principale */
+    --color-light-gray: #e5e7eb;    /* Bordi chiari */
+    --color-hover-dark: #1f307e;    
+    --font-stack: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box; /* Assicura che padding e bordo non aumentino la larghezza totale */
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- 2. Hero Section (Design ad Alto Impatto) --- */
+
+.hero-section {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 100px 20px 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: white; 
+    border-bottom: none;
+}
+
+.hero-section .intro {
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- 3. Header e Navigazione (Corretta) --- */
+
+header {
+    background: transparent; 
+    padding: 1rem 0;
+    position: absolute; 
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    padding: 8px 0;
+    opacity: 0.9;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+    opacity: 1;
+}
+
+/* --- 4. Layout Principale e Card --- */
+
+main {
+    padding: 0 20px 40px 20px; 
+    max-width: 1100px;
+    margin: 0 auto; 
+    background: transparent;
+    box-shadow: none; 
+}
+
+section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 30px;
+}
+
+/* Card Prossimo Incontro */
+.card {
+    border: none;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid var(--color-secondary); /* Linea di enfasi Verde */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Pulsanti CTA */
+.link-meeting {
+    margin-top: 20px;
+}
+
+.link-meeting a {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px; 
+    font-weight: 700;
+    box-shadow: 0 5px 0 0 #047857; 
+    transform: translateY(0);
+    transition: all 0.2s ease-out;
+}
+
+.link-meeting a:hover {
+    background-color: #047857;
+    box-shadow: 0 2px 0 0 #047857;
+    transform: translateY(3px);
+}
+
+/* --- 5. Tabelle (Risoluzione Allineamento e Bordo) --- */
 
 table {
     width: 100%;
-    /* 1. FONDAMENTALE: Forza la tabella ad avere colonne di larghezza fissa */
+    /* TABLE LAYOUT FIXED è la chiave per l'allineamento delle colonne */
     table-layout: fixed; 
     border-collapse: collapse; 
     margin-top: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--color-light-gray);
+    border: 1px solid var(--color-light-gray); 
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
 table thead {
@@ -18,25 +179,33 @@ table thead {
 table th, table td {
     padding: 15px;
     text-align: left;
+    /* Bordo su tutti i lati per una griglia chiara */
     border: 1px solid var(--color-light-gray); 
-    /* 2. OPZIONALE: Se un testo è troppo lungo, andrà a capo */
+    /* Ritorno a capo controllato */
     word-wrap: break-word; 
+    height: 100%; /* Altezza uniforme per allineamento */
 }
 
-/* 3. IMPOSTIAMO LE LARGHEZZE SPECIFICHE PER LE COLONNE */
-table th:nth-child(1), table td:nth-child(1) {
-    width: 15%; /* Colonna Data */
+/* Larghezze Colonne Rigide (Fondamentale per Allineamento) */
+/* Questa parte risolve il problema di disallineamento dovuto a testi lunghi */
+table th:nth-child(1), table td:nth-child(1) { width: 15%; } /* Data */
+table th:nth-child(2), table td:nth-child(2) { width: 50%; } /* Paper (il più lungo) */
+table th:nth-child(3), table td:nth-child(3) { width: 15%; } /* Presenter/Risorse */
+table th:nth-child(4), table td:nth-child(4) { width: 20%; } /* Link Paper */
+
+table tbody tr:nth-child(even) { background-color: var(--color-background); }
+
+table tbody tr:hover {
+    background-color: #f0f4f8; 
 }
 
-table th:nth-child(2), table td:nth-child(2) {
-    width: 50%; /* Colonna Paper (la più larga) */
-}
+/* --- Footer --- */
 
-table th:nth-child(3), table td:nth-child(3) {
-    width: 15%; /* Colonna Presenter */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-light-gray);
+    color: #6b7280;
+    font-size: 0.9rem;
 }
-
-table th:nth-child(4), table td:nth-child(4) {
-    width: 20%; /* Colonna Link Paper */
-}
-/* ... (Il resto delle regole per tr:nth-child(even) e tr:hover rimane invariato) ... */
