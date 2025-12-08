@@ -1,5 +1,148 @@
-/* --- Stili Aggiuntivi per il Form di Contatto --- */
+/* --- 1. Variabili e Reset Base --- */
+:root {
+    --color-primary: #1e3a8a;       /* Blu Scuro Intenso (Testata e Titoli) */
+    --color-secondary: #059669;     /* Verde Smeraldo (Focus, CTA) */
+    --color-background: #f8fafc;    /* Sfondo Molto Chiaro */
+    --color-text: #1f2937;          /* Testo principale */
+    --color-light-gray: #e5e7eb;    /* Bordi e Separatori */
+    --font-stack: 'Poppins', sans-serif;
+}
 
+* {
+    box-sizing: border-box; /* Previene i problemi di layout */
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- 2. Hero Section (Design ad Alto Impatto) --- */
+
+.hero-section {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 100px 20px 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.hero-section .intro {
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- 3. Header e Navigazione --- */
+
+header {
+    background: transparent; 
+    padding: 1rem 0;
+    position: absolute; 
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+/* --- 4. Layout Principale e Card --- */
+
+main {
+    padding: 0 20px 40px 20px; 
+    max-width: 1100px;
+    margin: 0 auto; 
+}
+
+section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 30px;
+}
+
+/* Card Prossimo Incontro */
+.card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-left: 5px solid var(--color-secondary); 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Pulsanti CTA */
+.link-meeting a, .subscription-form button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px; 
+    font-weight: 700;
+    box-shadow: 0 5px 0 0 #047857; 
+    transition: all 0.2s ease-out;
+    border: none;
+    cursor: pointer;
+}
+
+.link-meeting a:hover, .subscription-form button:hover {
+    background-color: #047857;
+    box-shadow: 0 2px 0 0 #047857;
+    transform: translateY(3px);
+}
+
+/* Form Contatti/Iscrizione */
 .subscription-form {
     display: flex;
     gap: 15px;
@@ -13,31 +156,36 @@
     border: 1px solid var(--color-light-gray);
     border-radius: 8px;
     font-size: 1rem;
-    transition: border-color 0.3s;
 }
 
-.subscription-form input[type="email"]:focus {
-    border-color: var(--color-secondary);
-    outline: none;
+
+/* --- 5. Tabelle (La Soluzione all'Allineamento) --- */
+
+table {
+    width: 100%;
+    /* TABLE LAYOUT FIXED: Forza l'allineamento perfetto */
+    table-layout: fixed; 
+    border-collapse: collapse; 
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-light-gray); 
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
-/* Riutilizzo dello stile pulsante "accattivante" */
-.subscription-form button {
-    /* Reimposta come pulsante (button) vs link (a) */
-    background-color: var(--color-secondary);
+table thead {
+    background-color: var(--color-primary);
     color: white;
-    padding: 12px 25px; 
-    border-radius: 50px; 
-    font-weight: 700;
-    box-shadow: 0 5px 0 0 #047857; 
-    transform: translateY(0);
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-    border: none;
 }
 
-.subscription-form button:hover {
-    background-color: #047857;
-    box-shadow: 0 2px 0 0 #047857;
-    transform: translateY(3px);
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    /* Bordo laterale e inferiore visibile (stile griglia) */
+    border: 1px solid var(--color-light-gray); 
+    word-wrap: break-word; /* Previene overflow del testo */
 }
+
+/* Larghezze Colonne Rigide (Chiave per l'allineamento) */
+table th:nth-child(1), table td:nth-child(1) { width: 15%; } 
+table th:nth-child(2), table td:nth-child(2) { width: 45%; } /* Paper:
