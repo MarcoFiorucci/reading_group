@@ -1,10 +1,8 @@
 /* --- 1. Variabili e Reset Base --- */
 :root {
-    /* --- 1. Variabili e Reset Base --- */
+ /* --- 1. Variabili e Reset Base --- */
 :root {
-    --color-primary: #9B0014;       /* Pantone Unipd (RGB 155, 0, 20) */
-    --color-secondary: #059669;     /* Verde Smeraldo (Focus, CTA) */
-}       /* Blu Scuro Intenso (Testata e Titoli) */
+    --color-primary: #9B0014;       /* Rosso Padova (Pantone 1807 C) */
     --color-secondary: #059669;     /* Verde Smeraldo (Focus, CTA) */
     --color-background: #f8fafc;    /* Sfondo Molto Chiaro */
     --color-text: #1f2937;          /* Testo principale */
