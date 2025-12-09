@@ -16,7 +16,6 @@ body {
     font-family: var(--font-stack);
     line-height: 1.6;
     color: var(--color-text);
-    /* Sfondo Generale */
     background-color: var(--color-background);
     margin: 0;
     padding: 0;
@@ -71,13 +70,12 @@ a:hover {
 }
 
 
-/* --- 3. Header e Navigazione --- */
+/* --- 3. Header e Navigazione (Rosso Padova) --- */
 
 header {
-    /* Il rosso deve essere applicato qui e nell'Hero per evitare il bianco in alto */
     background-color: var(--color-primary);
     padding: 1rem 0;
-    position: relative; /* Posizione corretta per non creare buchi */
+    position: relative; 
     width: 100%;
     z-index: 100;
 }
@@ -92,7 +90,7 @@ nav {
 }
 
 nav a {
-    color: white; /* Per essere visibile sul Rosso Padova */
+    color: white; 
     margin-left: 25px;
     font-weight: 600;
     padding: 8px 0;
@@ -111,7 +109,6 @@ main {
 }
 
 section {
-    /* Questo assicura che il contenuto non sia trasparente */
     background: white; 
     padding: 30px;
     border-radius: 12px;
@@ -133,7 +130,42 @@ section {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* ... (Omesse sezioni non pertinenti per brevità, ma devono essere complete nel tuo file) ... */
+/* Pulsanti CTA */
+.link-meeting a, .subscription-form button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px; 
+    font-weight: 700;
+    box-shadow: 0 5px 0 0 #047857; 
+    transition: all 0.2s ease-out;
+    border: none;
+    cursor: pointer;
+}
+
+.link-meeting a:hover, .subscription-form button:hover {
+    background-color: #047857;
+    box-shadow: 0 2px 0 0 #047857;
+    transform: translateY(3px);
+}
+
+/* Form Contatti/Iscrizione */
+.subscription-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.subscription-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
 
 /* --- 5. Tabelle --- */
 
@@ -149,8 +181,36 @@ table {
 }
 
 table thead {
-    /* Intestazione Tabella in Rosso Padova */
     background-color: var(--color-primary);
     color: white;
 }
-/* ... (Il resto delle tabelle e del footer deve essere incluso) ... */
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--color-light-gray); 
+    word-wrap: break-word; 
+}
+
+/* Larghezze Colonne Rigide AGGIORNATE */
+table th:nth-child(1), table td:nth-child(1) { width: 21%; } /* Date & Time */
+table th:nth-child(2), table td:nth-child(2) { width: 14%; } /* Presenter */
+table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* Paper */
+table th:nth-child(4), table td:nth-child(4) { width: 20%; } /* Venue / Link */
+
+table tbody tr:nth-child(even) { background-color: var(--color-background); }
+
+table tbody tr:hover {
+    background-color: #f0f4f8; 
+}
+
+/* --- Footer --- */
+
+footer {
+    text-align: center; /* CENTRATURA DEL CONTENUTO */
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-light-gray);
+    color: #6b7280;
+    font-size: 0.9rem;
+}
