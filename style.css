@@ -1,7 +1,5 @@
 /* --- 1. Variabili e Reset Base --- */
 :root {
- /* --- 1. Variabili e Reset Base --- */
-:root {
     --color-primary: #9B0014;       /* Rosso Padova (Pantone 1807 C) */
     --color-secondary: #059669;     /* Verde Smeraldo (Focus, CTA) */
     --color-background: #f8fafc;    /* Sfondo Molto Chiaro */
@@ -42,6 +40,7 @@ a:hover {
 /* --- 2. Hero Section (Design ad Alto Impatto) --- */
 
 .hero-section {
+    /* IL ROSSO VIENE APPLICATO QUI */
     background-color: var(--color-primary);
     color: white;
     padding: 100px 20px 80px 20px;
@@ -51,7 +50,7 @@ a:hover {
 }
 
 .hero-section h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Ridotto per fare spazio al logo */
     color: white; 
     margin-bottom: 10px;
 }
@@ -64,12 +63,24 @@ a:hover {
     opacity: 0.9;
 }
 
+/* Stile Aggiuntivo per il Logo nell'Hero Section */
+.hero-section .university-logo {
+    display: block;
+    width: 100px; 
+    height: auto;
+    margin: 0 auto 15px auto; 
+}
+
+
 /* --- 3. Header e Navigazione --- */
 
 header {
-    background: transparent; 
+    /* FORZIAMO IL COLORE ROSSO ANCHE SULLA BARRA DI NAVIGAZIONE */
+    background-color: var(--color-primary);
     padding: 1rem 0;
-    position: absolute; 
+    /* Usiamo 'relative' per farlo scendere con lo scroll, o 'absolute' se deve sovrapporre la hero */
+    /* Lo impostiamo su relative in modo che non ci sia trasparenza tra header e hero */
+    position: relative; 
     width: 100%;
     z-index: 100;
 }
@@ -84,6 +95,7 @@ nav {
 }
 
 nav a {
+    /* Testo Bianco sui link per contrastare il rosso scuro */
     color: white;
     margin-left: 25px;
     font-weight: 600;
@@ -110,7 +122,7 @@ section {
     margin-bottom: 30px;
 }
 
-/* Card Prossimo Incontro */
+/* Card Prossimo Incontro e Card Regole */
 .card {
     padding: 30px;
     border-radius: 12px;
@@ -144,7 +156,7 @@ section {
     transform: translateY(3px);
 }
 
-/* Form Contatti/Iscrizione */
+/* Form Contatti/Iscrizione (mantenuto per le altre pagine) */
 .subscription-form {
     display: flex;
     gap: 15px;
@@ -161,11 +173,10 @@ section {
 }
 
 
-/* --- 5. Tabelle (La Soluzione all'Allineamento) --- */
+/* --- 5. Tabelle --- */
 
 table {
     width: 100%;
-    /* TABLE LAYOUT FIXED: Forza l'allineamento perfetto */
     table-layout: fixed; 
     border-collapse: collapse; 
     margin-top: 15px;
@@ -176,6 +187,7 @@ table {
 }
 
 table thead {
+    /* TITOLI TABELLA ROSSO PADOVA */
     background-color: var(--color-primary);
     color: white;
 }
@@ -183,13 +195,11 @@ table thead {
 table th, table td {
     padding: 15px;
     text-align: left;
-    /* Bordo laterale e inferiore visibile (stile griglia) */
     border: 1px solid var(--color-light-gray); 
-    word-wrap: break-word; /* Previene overflow del testo */
+    word-wrap: break-word; 
 }
 
-/* Larghezze Colonne Rigide (Aggiornate: Date 21%, Presenter 14%) */
-/* Nuovo ordine: 1. Date/Time, 2. Presenter, 3. Paper, 4. Venue/Link */
+/* Larghezze Colonne Rigide */
 table th:nth-child(1), table td:nth-child(1) { width: 21%; } /* Date & Time */
 table th:nth-child(2), table td:nth-child(2) { width: 14%; } /* Presenter */
 table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* Paper (Il più lungo) */
