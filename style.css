@@ -16,6 +16,7 @@ body {
     font-family: var(--font-stack);
     line-height: 1.6;
     color: var(--color-text);
+    /* Sfondo Generale */
     background-color: var(--color-background);
     margin: 0;
     padding: 0;
@@ -37,10 +38,9 @@ a:hover {
     color: var(--color-primary);
 }
 
-/* --- 2. Hero Section (Design ad Alto Impatto) --- */
+/* --- 2. Hero Section (Rosso Padova) --- */
 
 .hero-section {
-    /* IL ROSSO VIENE APPLICATO QUI */
     background-color: var(--color-primary);
     color: white;
     padding: 100px 20px 80px 20px;
@@ -50,7 +50,7 @@ a:hover {
 }
 
 .hero-section h1 {
-    font-size: 2.5rem; /* Ridotto per fare spazio al logo */
+    font-size: 2.5rem; 
     color: white; 
     margin-bottom: 10px;
 }
@@ -63,7 +63,6 @@ a:hover {
     opacity: 0.9;
 }
 
-/* Stile Aggiuntivo per il Logo nell'Hero Section */
 .hero-section .university-logo {
     display: block;
     width: 100px; 
@@ -75,12 +74,10 @@ a:hover {
 /* --- 3. Header e Navigazione --- */
 
 header {
-    /* FORZIAMO IL COLORE ROSSO ANCHE SULLA BARRA DI NAVIGAZIONE */
+    /* Il rosso deve essere applicato qui e nell'Hero per evitare il bianco in alto */
     background-color: var(--color-primary);
     padding: 1rem 0;
-    /* Usiamo 'relative' per farlo scendere con lo scroll, o 'absolute' se deve sovrapporre la hero */
-    /* Lo impostiamo su relative in modo che non ci sia trasparenza tra header e hero */
-    position: relative; 
+    position: relative; /* Posizione corretta per non creare buchi */
     width: 100%;
     z-index: 100;
 }
@@ -95,8 +92,7 @@ nav {
 }
 
 nav a {
-    /* Testo Bianco sui link per contrastare il rosso scuro */
-    color: white;
+    color: white; /* Per essere visibile sul Rosso Padova */
     margin-left: 25px;
     font-weight: 600;
     padding: 8px 0;
@@ -115,7 +111,8 @@ main {
 }
 
 section {
-    background: white;
+    /* Questo assicura che il contenuto non sia trasparente */
+    background: white; 
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
@@ -136,42 +133,7 @@ section {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Pulsanti CTA */
-.link-meeting a, .subscription-form button {
-    display: inline-block;
-    background-color: var(--color-secondary);
-    color: white;
-    padding: 14px 30px;
-    border-radius: 50px; 
-    font-weight: 700;
-    box-shadow: 0 5px 0 0 #047857; 
-    transition: all 0.2s ease-out;
-    border: none;
-    cursor: pointer;
-}
-
-.link-meeting a:hover, .subscription-form button:hover {
-    background-color: #047857;
-    box-shadow: 0 2px 0 0 #047857;
-    transform: translateY(3px);
-}
-
-/* Form Contatti/Iscrizione (mantenuto per le altre pagine) */
-.subscription-form {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    max-width: 600px;
-}
-
-.subscription-form input[type="email"] {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
+/* ... (Omesse sezioni non pertinenti per brevità, ma devono essere complete nel tuo file) ... */
 
 /* --- 5. Tabelle --- */
 
@@ -187,37 +149,8 @@ table {
 }
 
 table thead {
-    /* TITOLI TABELLA ROSSO PADOVA */
+    /* Intestazione Tabella in Rosso Padova */
     background-color: var(--color-primary);
     color: white;
 }
-
-table th, table td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid var(--color-light-gray); 
-    word-wrap: break-word; 
-}
-
-/* Larghezze Colonne Rigide */
-table th:nth-child(1), table td:nth-child(1) { width: 21%; } /* Date & Time */
-table th:nth-child(2), table td:nth-child(2) { width: 14%; } /* Presenter */
-table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* Paper (Il più lungo) */
-table th:nth-child(4), table td:nth-child(4) { width: 20%; } /* Venue / Link */
-
-table tbody tr:nth-child(even) { background-color: var(--color-background); }
-
-table tbody tr:hover {
-    background-color: #f0f4f8; 
-}
-
-/* --- Footer --- */
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 1px solid var(--color-light-gray);
-    color: #6b7280;
-    font-size: 0.9rem;
-}
+/* ... (Il resto delle tabelle e del footer deve essere incluso) ... */
