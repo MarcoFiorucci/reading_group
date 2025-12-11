@@ -193,10 +193,10 @@ table th, table td {
 }
 
 /* Larghezze Colonne Rigide AGGIORNATE */
-table th:nth-child(1), table td:nth-child(1) { width: 21%; } /* Date & Time */
-table th:nth-child(2), table td:nth-child(2) { width: 14%; } /* Presenter */
+table th:nth-child(1), table td:nth-child(1) { width: 20%; } /* Date & Time */
+table th:nth-child(2), table td:nth-child(2) { width: 17%; } /* Presenter */
 table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* Paper */
-table th:nth-child(4), table td:nth-child(4) { width: 20%; } /* Venue / Link */
+table th:nth-child(4), table td:nth-child(4) { width: 18%; } /* Venue / Link */
 
 table tbody tr:nth-child(even) { background-color: var(--color-background); }
 
