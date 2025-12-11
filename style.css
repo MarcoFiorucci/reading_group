@@ -130,7 +130,7 @@ section {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Pulsanti CTA */
+/* Pulsanti CTA e Form */
 .link-meeting a, .subscription-form button {
     display: inline-block;
     background-color: var(--color-secondary);
@@ -150,7 +150,6 @@ section {
     transform: translateY(3px);
 }
 
-/* Form Contatti/Iscrizione */
 .subscription-form {
     display: flex;
     gap: 15px;
@@ -167,7 +166,7 @@ section {
 }
 
 
-/* --- 5. Tabelle --- */
+/* --- 5. Tabelle Generali --- */
 
 table {
     width: 100%;
@@ -192,17 +191,37 @@ table th, table td {
     word-wrap: break-word; 
 }
 
-/* Larghezze Colonne Rigide AGGIORNATE */
-table th:nth-child(1), table td:nth-child(1) { width: 20%; } /* Date & Time */
-table th:nth-child(2), table td:nth-child(2) { width: 17%; } /* Presenter */
-table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* Paper */
-table th:nth-child(4), table td:nth-child(4) { width: 18%; } /* Venue / Link */
-
 table tbody tr:nth-child(even) { background-color: var(--color-background); }
 
 table tbody tr:hover {
     background-color: #f0f4f8; 
 }
+
+/* 5a. Larghezze Colonne per Schedule/Archive (4 colonne) */
+/* Quando/Dove, Presentato da, Cosa, Link */
+table th:nth-child(1), table td:nth-child(1) { width: 18%; } /* 1. When/Where (Ridotta) */
+table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* 2. Presented by (Aumentata) */
+table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* 3. What (Titolo) */
+table th:nth-child(4), table td:nth-child(4) { width: 17%; } /* 4. Link/Resources (Ridotta) */
+
+
+/* --- 6. Sovrascrittura Tabelle Specifiche (Suggested Papers, 3 colonne) --- */
+
+.paper-list table th:nth-child(1), 
+.paper-list table td:nth-child(1) { 
+    width: 20%; /* 1. Proposed by */
+}
+
+.paper-list table th:nth-child(2), 
+.paper-list table td:nth-child(2) { 
+    width: 60%; /* 2. What (Titolo Paper e Dettagli) */
+}
+
+.paper-list table th:nth-child(3), 
+.paper-list table td:nth-child(3) { 
+    width: 20%; /* 3. Link */
+}
+
 
 /* --- Footer --- */
 
@@ -213,4 +232,10 @@ footer {
     border-top: 1px solid var(--color-light-gray);
     color: #6b7280;
     font-size: 0.9rem;
+}
+
+footer small {
+    display: block; 
+    margin-top: 5px;
+    opacity: 0.7; 
 }
